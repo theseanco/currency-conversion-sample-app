@@ -7,7 +7,7 @@ export default async function convertCurrencies(unused: null, formData: FormData
   const currencyAmount = formData.get('currency-amount');
 
   try {
-    const currencyConversion = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/convert`, {
+    const currencyConversion = await axios.get(`/api/convert`, {
       params: {
         currencyFrom,
         currencyTo,
@@ -20,4 +20,3 @@ export default async function convertCurrencies(unused: null, formData: FormData
     return e
   }
 };
-  

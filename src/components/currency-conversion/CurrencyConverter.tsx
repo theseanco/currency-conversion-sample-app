@@ -16,7 +16,7 @@ interface ConversionState {
 export default function CurrencyConverter() {
   // Run SWR at start of render as we will always need currency data
   // This could be run server-side at the root of the page like so:
-  //  const { data: { response: currencyList } } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/currencies/`);
+  //  const { data: { response: currencyList } } = await axios.get(`/api/currencies/`);
   // This would eliminate the need for a Loading dialog
   const { 
     data: currencyList, 
@@ -25,7 +25,7 @@ export default function CurrencyConverter() {
   } = useSWR<{ response: CurrencyInfo[] }>('/api/currencies/', fetcher);
 
   // useActionState to help with form submission
-  // @ts-expect-error come back later if I have time
+  // @ts-expect-error comee back later if I have time
   const [conversionState, conversionFormAction, conversionPending] = useActionState(convertCurrencies, null) 
 
   if (currenciesLoading) return <p>Loading...</p>;
