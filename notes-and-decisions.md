@@ -123,13 +123,17 @@ Notes: No precision on output so we will need to truncate it
     - Server action retrieves conversion
     - Component displays conversion data
 
+
+
 ## Other considerations
 - This app will allow a user to convert a currency to the same currency. This could be mitigated inside of the form action but I don't have time to implement it
 - Would be nice to do some currency formatting on the currencies that are returned. I did find a library for this called Currency.js but i ran out of time and i've never used it before.
 - Would be nice to display the full name of these currencies for users. I would do that by cross-referencing the shortcodes sent back from the convert API and the list of currencies available from the currency API and returning it in the response
 - Using typescript was unnecessary for a project like this one, hence the rushed typing
 - Used native HTML form validation for input box when something more elegant would be preferable
+- The Next.js server action clears the form inputs when submitted, which isn't an ideal user flow.
 - Didn't have time to implement tests
+- I tried to deploy this to Netlify, but next.js api routes are only supported on pro & enterprise plans. It is deployed on Netlify at `https://currency-conversion-tool-interview-task-5f5dj1hw9.vercel.app`, but you need to have a vercel account to see it.
 
 ## Hiccups
 - Next.js server actions and API routes are still somewhat poorly documented and this was a headache

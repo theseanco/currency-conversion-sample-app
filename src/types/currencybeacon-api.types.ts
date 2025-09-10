@@ -15,7 +15,7 @@ export interface CurrencyInfo {
   precision: number;
   subunit: number;
   symbol: string;
-  symbol_first: string;
+  symbol_first: boolean;
   decimal_mark: string;
   thousands_separator: string;
 }

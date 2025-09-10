@@ -29,7 +29,7 @@ export default function CurrencyConverter() {
   const [conversionState, conversionFormAction, conversionPending] = useActionState(convertCurrencies, null) 
 
   if (currenciesLoading) return <p>Loading...</p>;
-  if (currenciesError) return <p>Error loading conversion tool, please try again later</p>;
+  if (currenciesError || !currencyList) return <p>Error loading conversion tool, please try again later</p>;
 
   return (
     <>
@@ -87,6 +87,7 @@ export default function CurrencyConverter() {
       <DisplayConversion 
         // @ts-expect-error come back if I have time
         conversionState={conversionState}
+        currencyList={currencyList.response}
         conversionPending={conversionPending}
       />
     </>
