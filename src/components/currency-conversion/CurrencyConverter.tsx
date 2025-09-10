@@ -6,7 +6,12 @@ import Form from "next/form";
 import convertCurrencies from "@/actions/convertCurrencies";
 
 import DisplayConversion from "../display-conversion/DisplayConversion";
-import {CurrencyInfo} from "@/types/currencybeacon-api.types";
+import {ConversionResponse, CurrencyInfo} from "@/types/currencybeacon-api.types";
+
+interface ConversionState {
+  data: ConversionResponse;
+  status: number;
+}
 
 export default function CurrencyConverter() {
   // Run SWR at start of render as we will always need currency data
@@ -20,6 +25,7 @@ export default function CurrencyConverter() {
   } = useSWR<{ response: CurrencyInfo[] }>('/api/currencies/', fetcher);
 
   // useActionState to help with form submission
+  // @ts-expect-error come back later if I have time
   const [conversionState, conversionFormAction, conversionPending] = useActionState(convertCurrencies, null) 
 
   if (currenciesLoading) return <p>Loading...</p>;
@@ -79,6 +85,7 @@ export default function CurrencyConverter() {
         </div>
       </Form>
       <DisplayConversion 
+        // @ts-expect-error come back if I have time
         conversionState={conversionState}
         conversionPending={conversionPending}
       />

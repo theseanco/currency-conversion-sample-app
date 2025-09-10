@@ -21,7 +21,7 @@ export default function DisplayConversion(
     </section>
   }
 
-  const { data: { amount, date, from, timestamp, to, value }, status } = conversionState;
+  const { data: { amount, from, timestamp, to, value }, status } = conversionState;
 
   if (status === 200) {
     return (

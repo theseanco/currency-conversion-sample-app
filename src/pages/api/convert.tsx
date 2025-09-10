@@ -7,7 +7,7 @@ export default async function handler(
 ) {
   try {
       // There has to be a better way way of accessing query parameters than this but i couldn't find one
-      const [path, queryParams] = req.url.split('?');
+      const [, queryParams] = req.url.split('?');
       const searchParams = new URLSearchParams(queryParams);
       const currencyFrom = searchParams.get('currencyFrom');
       const currencyTo = searchParams.get('currencyTo');
@@ -25,7 +25,7 @@ export default async function handler(
     );
 
     return res.status(200).json(data.response)
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Failed to get currency data' });
   }
 }
