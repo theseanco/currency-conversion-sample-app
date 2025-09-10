@@ -44,7 +44,7 @@ export default function CurrencyConverter() {
               placeholder="Enter amount" 
               name="currency-amount" 
               required 
-              pattern="^[0-9]*$"></input>
+              pattern="^\d+(\.\d{2})?$"></input>
           </div>
           <select 
             name="currency-from"
