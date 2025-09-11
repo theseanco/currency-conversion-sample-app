@@ -112,7 +112,7 @@ Notes: No precision on output so we will need to truncate it
 - Create the two selects and one input
 - I modified the server-rendered root component as it doesn't make sense to split this component out
 - Using SWR to fetch initial data is a bit troublesome as there is a flash of Loading... at the start - I could fetch this server-side at the root of the page and pass this data down to eliminate this so that a user only sees componentry once it is ready, but in the interests of time I will press on.
-- I will use next.js form actions for retrieving the information about the currency conversion.
+- I will use next.js form actions and associated API routes for retrieving the information about the currency conversion.
 - useActionState will help in constructing the UI based on this, giving access to information about the query
 - Flow:
     - SWR retrieves information about currencies (maybe suboptimal, could be done clientside)
@@ -123,10 +123,11 @@ Notes: No precision on output so we will need to truncate it
 - Ensure UI functions compliant with accessibility standards etc
 
 
-## Other considerations
+## Other considerations/Takeaways/Reflections/Etc
 - This app will allow a user to convert a currency to the same currency. This could be mitigated inside of the form action but I don't have time to implement it
 - Using typescript was unnecessary for a project like this one, hence the rushed typing
 - Used native HTML form validation for input box when something more elegant would be preferable
+- Some of the loading dialogs are in ugly places or could be replaced with spinners, but i'd deem this low priority for this task
 - The Next.js server action clears the form inputs when submitted, which isn't an ideal user flow, it's making me wonder if i should have done it all clientside.
 - Some currencies use a comma (or other symbols) for decimal demarcation and this tool won't support that
 - Haven't displayed the currency symbol as I was running out of time and initially it started reading out as garbage in the browser. I suspect this is to do with fonts and glyphs, not sure if there are additional currency fonts that would need to be supported in the frontend, or if it was some other kind of issue with parsing the response.
@@ -135,7 +136,7 @@ Notes: No precision on output so we will need to truncate it
     - There are a lot of test cases here particularly with the way in which currencies are being used to manipulate display data
     - Some of the componentry here is an ideal candidate for TDD in a professional setting
 - Would be good to restrict decimal places of input if a user is inputting a currency that doesn't have those decimal places
-- I tried to deploy this to Netlify, but next.js api routes are only supported on pro & enterprise plans. It is deployed on Netlify at `https://currency-conversion-tool-interview-task-5f5dj1hw9.vercel.app`, but you need to have a vercel account to see it.
+- I tried to deploy this to Netlify, but next.js api routes are only supported on pro & enterprise plans. It is deployed on Netlify at `https://currency-conversion-tool-interview-task-jg4lhd2gc.vercel.app`, but you need to have a vercel account to see it.
 
 ## Hiccups
 - Next.js server actions and API routes are still somewhat poorly documented and this was a headache
