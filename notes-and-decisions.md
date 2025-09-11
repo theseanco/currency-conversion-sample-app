@@ -130,7 +130,8 @@ Notes: No precision on output so we will need to truncate it
 - The Next.js server action clears the form inputs when submitted, which isn't an ideal user flow, it's making me wonder if i should have done it all clientside.
 - Some currencies use a comma (or other symbols) for decimal demarcation and this tool won't support that
 - Haven't displayed the currency symbol as I was running out of time and initially it started reading out as garbage in the browser. I suspect this is to do with fonts and glyphs, not sure if there are additional currency fonts that would need to be supported in the frontend, or if it was some other kind of issue with parsing the response.
-- Didn't have time to write tests :(
+- Didn't have time to write as many tests as i would have liked :(
+    - I did write tests for the DisplayConversion component 
     - There are a lot of test cases here particularly with the way in which currencies are being used to manipulate display data
     - Some of the componentry here is an ideal candidate for TDD in a professional setting
 - Would be good to restrict decimal places of input if a user is inputting a currency that doesn't have those decimal places

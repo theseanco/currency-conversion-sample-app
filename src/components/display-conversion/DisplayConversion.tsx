@@ -10,7 +10,6 @@ const processCurrency = (amount: number, currencyInfo: CurrencyInfo) => {
   if (Math.round(amount) !== amount) {
     const decimalAmount = amount.toFixed(currencyInfo.precision);
     const [main, decimal] = decimalAmount.toString().split('.');
-    console.log({main, decimal});
     const processedMain = processString(main, currencyInfo.thousands_separator);
     // If precision is 0 e.g. in BYN we can skip, a precision of 0 is falsy
     if (decimal) {
@@ -28,7 +27,7 @@ export default function DisplayConversion(
     currencyList,
     conversionPending,
   }: {
-    conversionState: {
+    conversionState?: {
       data: ConversionResponse;
       status: number;
     };
@@ -36,7 +35,6 @@ export default function DisplayConversion(
     conversionPending: boolean;
   }
 ) {
-  console.log({currencyList});
   if (!conversionState) return null;
   if (conversionPending) return <section className="flex justify-center items-center w-full"><p>Converting currencies...</p></section>;
 
