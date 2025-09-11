@@ -136,8 +136,7 @@ Notes: No precision on output so we will need to truncate it
     - There are a lot of test cases here particularly with the way in which currencies are being used to manipulate display data
     - Some of the componentry here is an ideal candidate for TDD in a professional setting
 - Would be good to restrict decimal places of input if a user is inputting a currency that doesn't have those decimal places
-- I tried to deploy this to Netlify, but next.js api routes are only supported on pro & enterprise plans. It is deployed on Netlify at `https://currency-conversion-tool-interview-task-jg4lhd2gc.vercel.app`, but you need to have a vercel account to see it.
-
+- I tried to deploy this to Netlify, but next.js api routes are only supported on pro & enterprise plans. It is deployed on vercel at https://currency-conversion-tool-interview.vercel.app/
 ## Hiccups
 - Next.js server actions and API routes are still somewhat poorly documented and this was a headache
 - Typescript was a both overkill and a hinderance in getting things done here, particularly around response typing, should have used regular JS for a small project

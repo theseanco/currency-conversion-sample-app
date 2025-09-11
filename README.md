@@ -12,3 +12,7 @@ An example environment variable file can be found in `.example.env`, the `CURREN
 ### Start the app
 
 The app can be started with `npm run dev`
+
+## Deployed version
+
+This app has also been deployed to https://currency-conversion-tool-interview.vercel.app/ and can be viewed there
