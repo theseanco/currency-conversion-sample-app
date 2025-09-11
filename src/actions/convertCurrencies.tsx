@@ -17,6 +17,6 @@ export default async function convertCurrencies(unused: null, formData: FormData
 
     return currencyConversion;
   } catch (e) {
-    return e
+    return e;
   }
 };
