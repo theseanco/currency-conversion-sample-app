@@ -51,7 +51,7 @@ export default function DisplayConversion(
     const toCurrency = currencyList.find(item => item.short_code === to) as CurrencyInfo;
 
     return (
-      <section className="flex justify-center items-center w-full flex-col">
+      <section className="flex justify-center items-center w-full flex-col" aria-live="polite">
         <p>{`${processCurrency(amount, fromCurrency)} ${fromCurrency?.name} is equal to ${processCurrency(value, toCurrency)} ${toCurrency.name}`}</p>
         <p>{`Conversion correct as of ${new Date(timestamp * 1000).toLocaleTimeString()} on ${new Date(timestamp * 1000).toDateString()}`}</p>
       </section>
